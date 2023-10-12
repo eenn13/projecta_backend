@@ -9,4 +9,6 @@ const sequelize = new Sequelize(DATABASE, USER, PASSWORD, {
     dialect: 'postgres'
 });
 
+
+
 module.exports = sequelize;
