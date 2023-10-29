@@ -6,7 +6,7 @@ const Log = require('./models/log');
 async function init() {
   try {
     console.log("Trying to connect to database tables...");
-    await sequelize.sync(); 
+    await sequelize.authenticate(); 
     console.log('Database and tables created successfully.');
   } catch (error) {
     console.error('Something went wrong:', error);
