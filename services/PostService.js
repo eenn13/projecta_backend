@@ -11,6 +11,14 @@ const functions = {
             throw Error(err);
         }
     },
+    getPosts: async () => {
+        try {
+            const posts = await Post.findAndCountAll();
+            return posts;
+        } catch (err) {
+            throw Error(err);
+        }
+    },
     deletePost: async (id) => {
         try {
             const share = await Post.findByPk(id);
