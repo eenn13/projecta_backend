@@ -1,7 +1,8 @@
 {
   "main": "index.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "build": "npm install"
   },
   "type": "commonjs",
   "dependencies": {
