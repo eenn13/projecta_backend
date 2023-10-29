@@ -5,14 +5,16 @@ const Log = require('./models/log');
 
 async function init() {
   try {
+    console.log("Trying to connect to database tables...");
     await sequelize.sync(); 
     console.log('Database and tables created successfully.');
   } catch (error) {
-    console.error('Error creating database and tables:', error);
+    console.error('Something went wrong:', error);
   } finally {
     //sequelize.close();
   }
 }
+
 
 module.exports = init;
 

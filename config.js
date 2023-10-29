@@ -1,14 +1,20 @@
 const { Sequelize } = require('sequelize');
-const DATABASE = "eva_exchange";
-const USER = "postgres";
-const PASSWORD = "qwe123";
-const HOST = "localhost";
+const DATABASE = "projecta_database";
+const USER = "projecta_database_user";
+const PASSWORD = "n1f4dmQddFWkzs5SzsX0H8YfRSTk3miU";
+const HOST = "dpg-ckulm3ramefc73agr1eg-a.frankfurt-postgres.render.com";
 
 const sequelize = new Sequelize(DATABASE, USER, PASSWORD, {
     host: HOST,
-    dialect: 'postgres'
+    port: 5432,
+    dialect: 'postgres',
+    ssl: true, // Enable SSL/TLS
+    dialectOptions: {
+    ssl: {
+      require: true,
+      rejectUnauthorized: false, // Use for self-signed certificates
+    },
+  },
 });
-
-
 
 module.exports = sequelize;
